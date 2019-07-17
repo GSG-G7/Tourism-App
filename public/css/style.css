@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 500px;
+    height: 400px;
+    border: 2px solid black;
+    text-align: center;
+}
+.container__image {
+    height: 40%;
+    width: 40%
+}

@@ -1,20 +1,16 @@
-
-
-let add = document.getElementById('add');
-add.addEventListener('click', function country (){
+function makeRequest(url, renderFunction) {
     var xhr = new XMLHttpRequest();
-    console.log
-    xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4 && xhr.status === 200) {
-            let res = JSON.parse(xhr.responseText)
-            console.log(res);
-            console.log(res.Response[0].Name);
-            console.log(res.Response[0].Region);
-            console.log(res.Response[0].SubRegion);
-            console.log(res.Response[0].CurrencyName);
-            console.log(res.Response[0].CurrencySymbol);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            renderFunction(JSON.parse(xhr.responseText));
         }
     }
-    xhr.open('GET',"http://countryapi.gear.host/v1/Country/getCountries");
-    xhr.send()
-});
+    xhr.open('GET', url);
+    xhr.send();
+};
+
+function getName(res) {
+    return res.Response.Name;
+}
+if (typeof module !== "undefined")
+    module.exports = makeRequest;
