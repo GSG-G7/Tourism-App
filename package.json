@@ -1,13 +1,27 @@
 {
+<<<<<<< HEAD
   "name": "Tourism-App",
+=======
+  "name": "tourism_app",
+>>>>>>> 642a4026491da93eb9d5b309e2489af56bb3af5b
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
+<<<<<<< HEAD
   "scripts": {
     "test": "node ./test/test.js | tap-spec"
+=======
+  "dependencies": {},
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "scripts": {
+    "test": "node test/test.js | tap-spec"
+>>>>>>> 642a4026491da93eb9d5b309e2489af56bb3af5b
   },
   "repository": {
     "type": "git",
@@ -19,9 +33,13 @@
   "bugs": {
     "url": "https://github.com/GSG-G7/Tourism-App/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/GSG-G7/Tourism-App#readme",
   "dependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
   }
+=======
+  "homepage": "https://github.com/GSG-G7/Tourism-App#readme"
+>>>>>>> 642a4026491da93eb9d5b309e2489af56bb3af5b
 }
