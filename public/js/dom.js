@@ -55,15 +55,15 @@ let url1 ='http://countryapi.gear.host/v1/Country/getCountries';
 
 add.addEventListener('click', function country (e){
     e.preventDefault();
-    makeRequest(url1, renderUserInfo);
     const place = cityName.value.trim();
+    let url1 =`http://countryapi.gear.host/v1/Country/getCountries/?pName=${place}`;
+    makeRequest(url1, renderUserInfo);
     const url2 = `http://api.apixu.com/v1/current.json?key=c0f2ccf7b56740debdb175933191507&q=${place}`;
     makeRequest(url2, callBack);
 });
 let callBack = respons => {
     let arr = respons.current.last_updated.split(" ");
-    console.log(dateW)
-   dateW.textContent = arr[0];
+    dateW.textContent = arr[0];
     lastUpdate.textContent = "Last Update: " + arr[1];
     tempW.textContent = respons.current.temp_c + " C °";
     setuationW.textContent = respons.current.condition.text;
@@ -71,19 +71,16 @@ let callBack = respons => {
   };
 
 function renderUserInfo(result) {
-    result.Response.forEach(element => {
-        if(cityName.value === element.Name){
-            flag.src = element.Flag;
-            name.textContent = `Country name is: ${element.Name}`;
-            region.textContent = `Country region: ${element.Region}`;
-            subRegion.textContent = `Country sub-region: ${element.subRegion}`;
-            currency.textContent = `Country currency: ${element.CurrencySymbol}  ${element.CurrencyName}`;
-            append(container,flag);
-            append(container,name);
-            append(container,region);
-            append(container,subRegion);
-            append(container, currency);
-        }
-    });
+    console.log(result.Response[0].Name)
 
+    flag.src = result.Response[0].Flag;
+    name.textContent = `Country name is: ${data.getName(result)}`;
+    region.textContent = `Country region: ${data.getRegion(result)}`;
+    subRegion.textContent = `Country sub-region: ${data.getSubRegion(result)}`;
+    currency.textContent = `Country currency: ${data.getCurrency(result)}  ${data.getCurrName(result)}`;
+    append(container,flag);
+    append(container,name);
+    append(container,region);
+    append(container,subRegion);
+    append(container, currency);
 };
