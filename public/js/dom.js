@@ -63,6 +63,9 @@ add.addEventListener('click', function country (e){
 });
 let callBack = respons => {
     let arr = respons.current.last_updated.split(" ");
+    weatherSec.style.display = 'block';
+    container.style.display = 'flex';
+   dateW.textContent = arr[0];
     dateW.textContent = arr[0];
     lastUpdate.textContent = "Last Update: " + arr[1];
     tempW.textContent = respons.current.temp_c + " C °";
@@ -71,13 +74,11 @@ let callBack = respons => {
   };
 
 function renderUserInfo(result) {
-    console.log(result.Response[0].Name)
-
     flag.src = result.Response[0].Flag;
-    name.textContent = `Country name is: ${data.getName(result)}`;
-    region.textContent = `Country region: ${data.getRegion(result)}`;
-    subRegion.textContent = `Country sub-region: ${data.getSubRegion(result)}`;
-    currency.textContent = `Country currency: ${data.getCurrency(result)}  ${data.getCurrName(result)}`;
+    name.textContent = `${data.getName(result)}`;
+    region.textContent = `The Region is${data.getRegion(result)}`;
+    subRegion.textContent = `The Sub-region is ${data.getSubRegion(result)}`;
+    currency.textContent = `The currency: ${data.getCurrency(result)}  ${data.getCurrName(result)}`;
     append(container,flag);
     append(container,name);
     append(container,region);
