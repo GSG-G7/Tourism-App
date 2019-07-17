@@ -8,6 +8,7 @@
 
 body{
     background-color: rgba(2, 13, 77, 0.8);
+
 }
 /* ===================== Start Section Header ===================== */
 .header{
@@ -24,6 +25,10 @@ body{
     border: 2px solid #bdc3c7;
 }
 /* ===================== End Section Header ===================== */
+.main{
+    min-height: 84.7vh
+}
+
 /* ===================== Start Section Form ===================== */
 .form{
     width: 90%;
@@ -182,8 +187,6 @@ body{
 /* ===================== Endt Section Country ===================== */
 /* ===================== Start Section Footer ===================== */
 .footer{
-    /* position: absolute;
-    bottom: 0; */
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -194,6 +197,87 @@ body{
 
 
 
+@media (min-width: 992px) {
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 77.1vh
+    }
+
+/* ===================== Start Section Header ===================== */
+.header{
+    font-size: 2.2rem;
+    width: 50%;
+    background-color:rgba(0, 0, 0, .7);
+}
+/* ===================== End Section Header ===================== */
+/* ===================== Start Section Form ===================== */
+.input-city{
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
+.form{
+    width: 100%
+}
+
+.form__input-city{
+    padding: 20px;
+    font-size: 1.6rem
+}
+
+.form__btn-search{
+font-size: 2rem    
+}
+.form__input-city::placeholder{
+    font-size: 1.3rem    
+    }
+/* ===================== End Section Form ===================== */
+/* ===================== Start Section Weather ===================== */
+.weather{
+    width: 33%;
+    padding: 20px;
+    height: 330px;
+    order: 2;
+    margin: 0 auto;
+}
+
+.weather p{
+    margin-top: 100px
+}
+
+.weather .weather__icon{
+    top:43%;
+}
+
+/* ===================== Endt Section Weather ===================== */
+/* ===================== Start Section Country ===================== */
+.container{
+    width: 65%;
+    padding: 20px;
+    display: none; 
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 auto
+}
+
+.container img {
+    margin: 0;
+    width: 30%;
+}
+
+.container p:first-of-type{
+  margin: 0;
+  width: 70%;
+}
+
+.container p{
+    width: 100%
+}
+/* ===================== Endt Section Country ===================== */
+
+
+ }
 
 
 
@@ -203,4 +287,4 @@ body{
 
 
 
-
+}

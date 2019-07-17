@@ -63,7 +63,7 @@ add.addEventListener('click', function country (e){
 });
 let callBack = respons => {
     let arr = respons.current.last_updated.split(" ");
-    weatherSec.style.display = 'block';
+    weatherSec.style.display = 'flex';
     container.style.display = 'flex';
    dateW.textContent = arr[0];
     dateW.textContent = arr[0];
