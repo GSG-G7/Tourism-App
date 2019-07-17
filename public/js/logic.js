@@ -9,9 +9,26 @@ function makeRequest(url, renderFunction) {
     xhr.send();
 };
 
-function getName(res) {
-    return res.Response.Name;
+let data = {
+    getName:(res)=>{
+        return res.Response[0].Name;
+    },
+    getRegion:(res)=>{
+        return res.Response[0].Region;
+    },
+    getSubRegion:(res)=>{
+        return res.Response[0].SubRegion;
+    },
+    getCurrency:(res)=>{
+        return res.Response[0].CurrencySymbol;
+    },
+    getCurrName:(res)=>{
+        return res.Response[0].CurrencyName;
+    }
 }
-if (typeof module !== "undefined")
-    module.exports = makeRequest;
+
+if (typeof module !== "undefined"){
+    module.exports = data;
+}
+
 
