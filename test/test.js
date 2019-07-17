@@ -1,6 +1,6 @@
 
 const test = require('tape');
-const makeRequest = require('../public/js/logic');
+const data = require('../public/js/logic');
 
 test('Initial test', (t)=> {
     t.pass();
@@ -32,8 +32,10 @@ let response = {
     } 
     ] }
 test('testing for country API', (t)=> {
-    let expected = "Afghanistan";
-    let actual = getName(response); 
-    t.deepEqual(actual,expected);
+    t.deepEqual(data.getName(response),"Afghanistan","country name should be Afghanistan");
+    t.deepEqual(data.getRegion(response),"Asia", "Region should be Asia");
+    t.deepEqual(data.getSubRegion(response),"Southern Asia", "SubRegion should be Southern Asia");
+    t.deepEqual(data.getCurrency(response), "؋", "currency symple should be ؋");
+    t.deepEqual(data.getCurrName(response),"Afghan afghani", "currency name shouls be Afghan afghani");
     t.end();
 });

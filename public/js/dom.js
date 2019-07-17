@@ -55,8 +55,9 @@ let url1 ='http://countryapi.gear.host/v1/Country/getCountries';
 
 add.addEventListener('click', function country (e){
     e.preventDefault();
-    makeRequest(url1, renderUserInfo);
     const place = cityName.value.trim();
+    let url1 =`http://countryapi.gear.host/v1/Country/getCountries/?pName=${place}`;
+    makeRequest(url1, renderUserInfo);
     const url2 = `http://api.apixu.com/v1/current.json?key=c0f2ccf7b56740debdb175933191507&q=${place}`;
     makeRequest(url2, callBack);
 });
@@ -65,6 +66,7 @@ let callBack = respons => {
     weatherSec.style.display = 'block';
     container.style.display = 'flex';
    dateW.textContent = arr[0];
+    dateW.textContent = arr[0];
     lastUpdate.textContent = "Last Update: " + arr[1];
     tempW.textContent = respons.current.temp_c + " C °";
     setuationW.textContent = respons.current.condition.text;
@@ -72,19 +74,14 @@ let callBack = respons => {
   };
 
 function renderUserInfo(result) {
-    result.Response.forEach(element => {
-        if(cityName.value === element.Name){
-            flag.src = element.Flag;
-            name.textContent = `  ${element.Name}`;
-            region.textContent = `The Region is ${element.Region}`;
-            subRegion.textContent = `The Sub-region is ${element.SubRegion}`;
-            currency.textContent = `The currency: ${element.CurrencySymbol}  ${element.CurrencyName}`;
-            append(container,flag);
-            append(container,name);
-            append(container,region);
-            append(container,subRegion);
-            append(container, currency);
-        }
-    });
-
+    flag.src = result.Response[0].Flag;
+    name.textContent = `${data.getName(result)}`;
+    region.textContent = `The Region is${data.getRegion(result)}`;
+    subRegion.textContent = `The Sub-region is ${data.getSubRegion(result)}`;
+    currency.textContent = `The currency: ${data.getCurrency(result)}  ${data.getCurrName(result)}`;
+    append(container,flag);
+    append(container,name);
+    append(container,region);
+    append(container,subRegion);
+    append(container, currency);
 };
