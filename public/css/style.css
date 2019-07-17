@@ -2,15 +2,205 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: transparent;
+    font-family: "Roboto", sans-serif;
 }
 
-.container {
-    width: 500px;
-    height: 400px;
-    border: 2px solid black;
+body{
+    background-color: rgba(2, 13, 77, 0.8);
+}
+/* ===================== Start Section Header ===================== */
+.header{
     text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 80%;
+    background-color:rgba(0, 0, 0, .7);
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 30px;
+    border: 2px solid #bdc3c7;
 }
-.container__image {
-    height: 40%;
-    width: 40%
+/* ===================== End Section Header ===================== */
+/* ===================== Start Section Form ===================== */
+.form{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
 }
+
+.form__input-city{
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 20px 0 0 20px;
+    border: 2px solid #666;
+    border-width: 2px 0 2px 2px;
+
+}
+
+.form__btn-search{
+    width: 20%;
+    border-radius: 0 20px 20px 0;
+    border: 2px solid #666;
+    background-color: #ccc;
+    cursor: pointer;
+    border-width: 2px 2px 2px 0;
+    
+}
+/* ===================== End Section Form ===================== */
+/* ===================== Start Section Weather ===================== */
+.weather{
+    display: none;
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #F17022;
+    overflow: hidden;
+    position: relative;
+    height: 135px
+}
+
+.weather p{
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.weather p:nth-of-type(2){
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 5;
+    font-size: 1.25rem
+}
+
+
+.weather p:nth-of-type(3), .weather p:nth-of-type(4){
+    position: absolute;
+    left: 70px;
+    top: 50px;
+}
+.weather p:nth-of-type(4){
+    top: 75px
+}
+
+.weather .weather__icon{
+    position: absolute;
+    top:37px;
+    left:0;
+    width: 75px;
+    height: 75px
+}
+
+
+/* ------------ Statr Animation ------------ */
+.animation-1{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color:  rgba(253,184,19,1);
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    z-index: 3;
+    animation: animation-one 3s infinite;
+}
+
+.animation-2{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: rgba(246,140,31,0.7);;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    z-index: 2;
+    animation: animation-one 4s infinite;
+}
+
+.animation-3{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(241,125,45,0.7);;
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    z-index: 0;
+    animation: animation-one 3s infinite;
+}
+
+@keyframes animation-one{
+    0%, 50%{
+        transform: scale(1)
+    }
+
+    50%{
+        transform: scale(1.15)
+    }
+}
+/* ------------ End Animation ------------ */
+/* ===================== Endt Section Weather ===================== */
+/* ===================== Start Section Country ===================== */
+.container{
+    display: none;
+    width: 90%;
+    margin: 10px auto;
+    border: 2px solid transparent;;
+    padding: 10px;
+    /* display: flex; */
+    flex-wrap: wrap;
+    border-radius: 8px;
+    background: linear-gradient(#ecf0f1, #bdc3c7, #95a5a6, #7f8c8d, #ecf0f1, #bdc3c7);
+}
+
+.container img {
+    width: 100%;
+    margin-bottom:20px;
+    order: 2
+}
+
+.container p:first-of-type{
+    font-size: 3.5rem;
+    margin: 0 auto;
+    order: 1;
+
+}
+
+.container p{
+    line-height: 2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    order: 3
+}
+/* ===================== Endt Section Country ===================== */
+/* ===================== Start Section Footer ===================== */
+.footer{
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #ccc;
+    background-color: #2d3436;
+}
+/* ===================== End Section Footer ===================== */
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -62,7 +62,8 @@ add.addEventListener('click', function country (e){
 });
 let callBack = respons => {
     let arr = respons.current.last_updated.split(" ");
-    console.log(dateW)
+    weatherSec.style.display = 'block';
+    container.style.display = 'flex';
    dateW.textContent = arr[0];
     lastUpdate.textContent = "Last Update: " + arr[1];
     tempW.textContent = respons.current.temp_c + " C °";
@@ -74,10 +75,10 @@ function renderUserInfo(result) {
     result.Response.forEach(element => {
         if(cityName.value === element.Name){
             flag.src = element.Flag;
-            name.textContent = `Country name is: ${element.Name}`;
-            region.textContent = `Country region: ${element.Region}`;
-            subRegion.textContent = `Country sub-region: ${element.subRegion}`;
-            currency.textContent = `Country currency: ${element.CurrencySymbol}  ${element.CurrencyName}`;
+            name.textContent = `  ${element.Name}`;
+            region.textContent = `The Region is ${element.Region}`;
+            subRegion.textContent = `The Sub-region is ${element.SubRegion}`;
+            currency.textContent = `The currency: ${element.CurrencySymbol}  ${element.CurrencyName}`;
             append(container,flag);
             append(container,name);
             append(container,region);

@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="public/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tourism App</title>
     </head>
-
     <body>
-
-    <header></header>
+    <header class="header">Tourism App</header>
 
     <main id="mainSec">
         <section class="input-city">
-                <form>
-                    <input type="text" id="city-name" placeholder="City Name" value=""/>
-                    <button id="btnSearch">Search</button>
+                <form class="form">
+                    <input type="text" id="city-name" placeholder="City Name" value="" class="form__input-city"/>
+                    <button id="btnSearch" class="form__btn-search"><i class="fa fa-search"></i></button>
                 </form>
         </section>
 
         <section class="weather" id="weather">
-            
+            <span class="animation-1"></span>
+            <span class="animation-2"></span>
+            <span class="animation-3"></span>
         </section>
         <div class="container">
-        
         </div>
-        
     </main>
 
-    <footer></footer>
+    <footer class="footer">copyright&copy;TourismApp</footer>
 
     <script src="public/js/dom.js"></script>
     <script src="public/js/logic.js"></script>
