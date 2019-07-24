@@ -1,0 +1,8 @@
+.main {
+  min-height: 84.7vh;
+  @media (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 77.1vh;
+  }
+}
